@@ -1,0 +1,11 @@
+services:
+  birthday:
+    tty: true
+    build:
+      context: .
+    ports:
+    - "8080:8080"
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"

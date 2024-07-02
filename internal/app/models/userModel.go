@@ -15,3 +15,13 @@ type User struct {
 	Subscribers   []primitive.ObjectID `bson:"subscribers"`
 	Session       *Session             `bson:"session"`
 }
+
+func NewUser(login *string, password *string, name *string, birthday *string, phone *string) *User {
+	return &User{
+		Login:    login,
+		Password: password,
+		Name:     name,
+		BirthDay: birthday,
+		Phone:    password,
+	}
+}

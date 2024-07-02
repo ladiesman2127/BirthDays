@@ -10,4 +10,5 @@ func initUserRoutes(userController *controllers.UsersController, api *gin.Router
 	api.GET("/users", userController.GetUsers)
 	api.GET("/birthdays", userController.GetBirthdayNotifications)
 	api.POST("/addFriend/:id", userController.AddFriend)
+	api.POST("/removeFriend/:id", userController.RemoveFriend)
 }

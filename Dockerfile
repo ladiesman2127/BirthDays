@@ -1,0 +1,9 @@
+FROM mongo
+
+FROM golang:1.22.4
+
+COPY . /app
+WORKDIR /app
+
+EXPOSE 8080
+EXPOSE 27017

@@ -1,7 +1,6 @@
 package app
 
 import (
-	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -11,8 +10,9 @@ import (
 	"github.com/ladiesman2127/birthdays/internal/database"
 )
 
-func Start() {
+func New() *gin.Engine {
 	DB_NAME := os.Getenv("DB_NAME")
+
 	app := gin.Default()
 
 	db := database.New(&DB_NAME)
@@ -21,7 +21,5 @@ func Start() {
 
 	router.InitRoutes(userController, app)
 
-	if err := app.Run(":8080"); err != nil {
-		log.Fatal(err)
-	}
+	return app
 }

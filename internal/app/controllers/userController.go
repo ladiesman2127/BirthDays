@@ -85,9 +85,7 @@ func (controller *UsersController) SignUp(ctx *gin.Context) {
 	}
 
 	// Result OK 200
-	ctx.JSON(http.StatusOK, gin.H{
-		"result": "ok",
-	})
+	ctx.JSON(http.StatusOK, user.ID.Hex())
 }
 
 func (controller *UsersController) Auth(ctx *gin.Context) {
@@ -133,9 +131,7 @@ func (controller *UsersController) Auth(ctx *gin.Context) {
 		return
 	}
 	// Success
-	ctx.JSON(http.StatusOK, gin.H{
-		"result": session,
-	})
+	ctx.JSON(http.StatusOK, session)
 }
 
 func (controller *UsersController) GetUser(ctx *gin.Context) {
