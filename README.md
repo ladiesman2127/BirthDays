@@ -8,11 +8,11 @@ Supports the next REST API commands:
 
 1. POST /api/signup/ - Create a new user.
 2 .POST /api/auth/ - Auth to get JWT tokens to use the commands below
-3. POST /api/user/:id - Get specific user data by his ID
-4. POST /api/users - Get all users data
+3. GET /api/user/:id - Get specific user data by his ID
+4. GET /api/users - Get all users data
 5. POST /api/addFriend/:id - Add the user to the current user's friends list; therefore, he will get a notification about birthdays.
 6. POST /api/removeFriend/:id - Remove the user from the current user's friends list; therefore, he will not get a notification about birthdays.
-7. POST /api/birthdays - Show all friends that have birthdays today.
+7. GET /api/birthdays - Show all friends that have birthdays today.
 
 ## Project structure
 - api - contains files to define routes and server side interaction-
